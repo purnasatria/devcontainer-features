@@ -11,6 +11,14 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
+# Ensure curl is available
+if ! command -v curl > /dev/null 2>&1; then
+    apt-get update -y
+    apt-get install -y curl
+    apt-get clean
+    rm -rf /var/lib/apt/lists/*
+fi
+
 # Determine architecture
 ARCH=$(uname -m)
 case "${ARCH}" in
@@ -36,8 +44,8 @@ fi
 echo "Downloading neovim from ${DOWNLOAD_URL}..."
 
 curl -fLo "/tmp/${TARBALL}" "${DOWNLOAD_URL}"
-tar -C /usr/local -xzf "/tmp/${TARBALL}"
-mv "/usr/local/nvim-linux-${NVIM_ARCH}" /usr/local/nvim
+mkdir -p /usr/local/nvim
+tar -C /usr/local/nvim --strip-components=1 -xzf "/tmp/${TARBALL}"
 ln -sf /usr/local/nvim/bin/nvim /usr/local/bin/nvim
 rm "/tmp/${TARBALL}"
 
