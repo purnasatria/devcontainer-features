@@ -1,13 +1,13 @@
 
-# Neovim (from source) (neovim)
+# Neovim (neovim)
 
-A feature to install Neovim building from source
+A feature to install Neovim from pre-built binaries
 
 ## Example Usage
 
 ```json
 "features": {
-    "ghcr.io/duduribeiro/devcontainer-features/neovim:1": {}
+    "ghcr.io/purnasatria/devcontainer-features/neovim:1": {}
 }
 ```
 
@@ -25,4 +25,4 @@ This Feature should work on recent versions of Debian/Ubuntu with the `apt` pack
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/duduribeiro/devcontainer-features/blob/main/src/neovim/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/purnasatria/devcontainer-features/blob/main/src/neovim/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
