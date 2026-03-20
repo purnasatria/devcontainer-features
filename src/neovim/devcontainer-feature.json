@@ -1,12 +1,8 @@
 {
-    "name": "Neovim (from source)",
+    "name": "Neovim",
     "id": "neovim",
-    "version": "1.1.0",
-    "dependsOn": {
-      "ghcr.io/devcontainers/features/common-utils": {},
-      "ghcr.io/devcontainers/features/git": {}
-    },
-    "description": "A feature to install Neovim building from source",
+    "version": "1.2.0",
+    "description": "A feature to install Neovim from pre-built binaries",
     "options": {
         "version": {
             "type": "string",
@@ -29,8 +25,5 @@
             "description": "The version of Neovim to be installed (stable, nightly or a specific version in the format 'MAJOR.MINOR.PATCH' e.g. '0.9.5)"
         }
     },
-    "installsAfter": [
-        "ghcr.io/devcontainers/features/common-utils",
-        "ghcr.io/devcontainers/features/git"
-    ]
+    "installsAfter": []
 }
